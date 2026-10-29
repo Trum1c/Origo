@@ -1,4 +1,6 @@
 /* Node class for modeling graphs
+BLUEPRINT TO MAKE NODES AND EDGES, 
+IN OTHER WORDS, LOCATIONS AND EXITS
  */
 
 class Node {

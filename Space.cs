@@ -1,4 +1,6 @@
 /* Space class for modeling spaces (rooms, caves, ...)
+SPACE CLASS GIVES NAMES TO SPACES (WHICH ARE NODES)
+AND ALSO DISPLAYS LOCATION AND CURRENT EXITS.
  */
 
 class Space : Node {

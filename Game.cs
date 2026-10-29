@@ -7,7 +7,7 @@ MEANING, USER WRITES SOMETHING AND CODE RUNS OFF OF IT.
 class Game {
   static World    world    = new World();
   static Context  context  = new Context(world.GetEntry());
-  
+  static City     city     = new City(50,50,50);
   static void Main (string[] args) {
     Console.WriteLine("Velkommen til borgmesterens by!");
     
@@ -29,6 +29,9 @@ class Game {
         case "farvel":
           context.MakeDone();
           break;
+        case "status":
+          Console.WriteLine(city.GetStatus());
+          break;
         case "gå":
           if (parameters.Length!=1) {
             Console.WriteLine("Jeg ved ikke hvor det ligger for søren 🤔");
@@ -37,11 +40,12 @@ class Game {
           context.Transition(parameters[0]);
           break;
         case "hjælp":
-          Console.WriteLine(" - stop  Stop spillet");
-          Console.WriteLine(" - udgang  Stop spillet");
+          Console.WriteLine(" - stop     Stop spillet");
+          Console.WriteLine(" - udgang   Stop spillet");
           Console.WriteLine(" - farvel   Stop spillet");
-          Console.WriteLine(" - gå    Gå til et område");
-          Console.WriteLine(" - hjælp  Viser disse beskeder");
+          Console.WriteLine(" - gå       Gå til et område");
+          Console.WriteLine(" - hjælp    Viser disse beskeder");
+          Console.WriteLine(" - status   Viser byens status");
           break;
         default:
           Console.WriteLine("Hovsa! Jeg forstår ikke '"+command+"' 😕");

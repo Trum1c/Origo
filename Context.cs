@@ -16,7 +16,7 @@ class Context {
   public void Transition (string direction) {
     Space next = current.FollowEdge(direction);
     if (next==null) {
-      Console.WriteLine("You are confused, and walk in a circle looking for '"+direction+"'. In the end you give up 😩");
+      Console.WriteLine("Du er forvirret og går rundt i en cirkel hvor du ledder for '"+direction+"'. Til sidst giver du op 😩");
     } else {
       current.Goodbye();
       current = next;

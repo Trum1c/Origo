@@ -9,9 +9,9 @@ class Space : Node {
   }
   
   public void Welcome () {
-    Console.WriteLine("You are now at "+name);
+    Console.WriteLine("Du er nu ved "+name);
     HashSet<string> exits = edges.Keys.ToHashSet();
-    Console.WriteLine("Current exits are:");
+    Console.WriteLine("Tilgængelige områder:");
     foreach (String exit in exits) {
       Console.WriteLine(" - "+exit);
     }

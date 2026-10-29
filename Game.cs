@@ -9,7 +9,7 @@ class Game {
   static Context  context  = new Context(world.GetEntry());
   
   static void Main (string[] args) {
-    Console.WriteLine("Welcome to the World of Zuul!");
+    Console.WriteLine("Velkommen til borgmesterens by!");
     
     context.GetCurrent().Welcome();
     
@@ -24,31 +24,31 @@ class Game {
       string[] parameters = GetParameters(elements);
       
       switch (command) {
-        case "exit":
-        case "quit":
-        case "bye":
+        case "stop":
+        case "udgang":
+        case "farvel":
           context.MakeDone();
           break;
-        case "go":
+        case "gå":
           if (parameters.Length!=1) {
-            Console.WriteLine("I don't seem to know where that is 🤔");
+            Console.WriteLine("Jeg ved ikke hvor det ligger for søren 🤔");
             return;
           }
           context.Transition(parameters[0]);
           break;
-        case "help":
-          Console.WriteLine(" - exit  Exit the program");
-          Console.WriteLine(" - quit  Exit the program");
-          Console.WriteLine(" - bye   Exit the program");
-          Console.WriteLine(" - go    Follow an exit");
-          Console.WriteLine(" - help  Display a help message");
+        case "hjælp":
+          Console.WriteLine(" - stop  Stop spillet");
+          Console.WriteLine(" - udgang  Stop spillet");
+          Console.WriteLine(" - farvel   Stop spillet");
+          Console.WriteLine(" - gå    Gå til et område");
+          Console.WriteLine(" - hjælp  Viser disse beskeder");
           break;
         default:
-          Console.WriteLine("Woopsie, I don't understand '"+command+"' 😕");
+          Console.WriteLine("Hovsa! Jeg forstår ikke '"+command+"' 😕");
           break;
       }
     }
-    Console.WriteLine("Game Over 😥");
+    Console.WriteLine("Øv bøv, game over 😥");
   }
   
   private static string[] GetParameters (string[] input) {

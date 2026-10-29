@@ -2,7 +2,7 @@
 BLUEPRINT TO MAKE NODES AND EDGES, 
 IN OTHER WORDS, LOCATIONS AND EXITS
  */
-
+ 
 class Node {
   protected string name;
   protected Dictionary<string, Node> edges = new Dictionary<string, Node>();
@@ -21,6 +21,6 @@ class Node {
   
   public virtual Node FollowEdge (string direction) {
     return edges[direction];
-  }
+  } // MAKE AN EXCEPTION FOR INVALID INPUTS (for example, torb)
 }
 

@@ -8,6 +8,7 @@ class Game {
   static World    world    = new World();
   static Context  context  = new Context(world.GetEntry());
   static City     city     = new City(50,50,50);
+  
   static void Main (string[] args) {
     Console.WriteLine("Velkommen til borgmesterens by!");
     

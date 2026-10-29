@@ -13,13 +13,13 @@ public class Option {
         public string GetName(){
             return name;
         }
-        public int EconomyChange(){
+        public int GetEconomyChange(){
             return economyChange;
         }
-        public int SatisfactionChange(){
+        public int GetSatisfactionChange(){
             return satisfactionChange;
         }
-        public int Co2Change(){
+        public int GetCo2Change(){
             return co2Change;
         }
 }

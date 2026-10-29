@@ -11,7 +11,10 @@ public class City {
     }
     
     public void ApplyOption(Option option) {
-        // temporary function
+        this.economy += option.GetEconomyChange();
+        this.satisfaction += option.GetSatisfactionChange();
+        this.co2 += option.GetCo2Change();
+        
     } 
     public string GetStatus (){
         return "\nØkonomi: "+economy+ "\nTilfredshed: " +satisfaction+ "\nCO2: " +co2+ "\n";

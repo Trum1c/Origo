@@ -32,7 +32,7 @@ class Game {
         case "gå":
           if (parameters.Length!=1) {
             Console.WriteLine("Jeg ved ikke hvor det ligger for søren 🤔");
-            return;
+            continue;
           }
           context.Transition(parameters[0]);
           break;

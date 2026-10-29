@@ -14,15 +14,18 @@ class Context {
   }
   
   public void Transition (string direction) {
-    Space next = current.FollowEdge(direction);
-    if (next==null) {
-      Console.WriteLine("Du er forvirret og går rundt i en cirkel hvor du ledder for '"+direction+"'. Til sidst giver du op 😩");
-    } else {
+      Space next;
+      
+      try{
+          next = current.FollowEdge(direction);
+      } catch (KeyNotFoundException) {
+          Console.WriteLine("Du er forvirret og går rundt i en cirkel hvor du ledder for '"+direction+"'. Til sidst giver du op 😩");
+          return;
+      }
       current.Goodbye();
       current = next;
       current.Welcome();
     }
-  }
   
   public void MakeDone () {
     done = true;

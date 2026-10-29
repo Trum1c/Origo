@@ -20,7 +20,10 @@ class Node {
   }
   
   public virtual Node FollowEdge (string direction) {
-    return edges[direction];
-  } // MAKE AN EXCEPTION FOR INVALID INPUTS (for example, torb)
+      if(edges[direction] == null){
+          throw new KeyNotFoundException(direction + " Findes ikke. Prøv igen.");
+      }
+      return edges[direction];
+  }
 }
 

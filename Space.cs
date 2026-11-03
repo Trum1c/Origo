@@ -5,10 +5,12 @@ AND ALSO DISPLAYS LOCATION AND CURRENT EXITS.
 
 class Space : Node {
     private Decision? decision;
+    private string description;
     
-  public Space (String name) : base(name)
-  {
-  }
+    public Space (String name, String description) : base(name)
+    {
+      this.description = description;
+    }
 
   public void SetDecision(Decision decision){
       this.decision = decision;
@@ -20,7 +22,8 @@ class Space : Node {
   
   public void Welcome () {
     Console.WriteLine("Du er nu ved "+name);
-
+    Console.WriteLine(description);
+    
     if(decision != null){
         if(decision.IsMade()){
             Console.WriteLine("Beslutningen her er allerede truffet.");

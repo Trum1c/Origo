@@ -33,6 +33,17 @@ class World {
     port.AddEdge("torv", square);
     
     this.cityHall = cityHall;
+
+    // Decisions and options
+
+    //  1. Sæt kulkraftværket i stand. 2. Luk kulkraftværket.
+    Option repairCoalPlant = new Option("Sæt kulkraftværket i stand", 15, -10, 20);
+    Option shutdownCoalPlant = new Option("Luk kulkraftværket", -15, 10, -20); // change
+
+    Decision coalPlantDecision = new Decision("Det gamle kulkraftværk er slidt, men byen har brug for strøm. Hvad skal borgmesteren gøre?"); 
+    coalPlantDecision.AddOption(repairCoalPlant);
+    coalPlantDecision.AddOption(shutdownCoalPlant);
+    coalPlant.SetDecision(coalPlantDecision);
   }
   
   public Space GetEntry () {

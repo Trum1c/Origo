@@ -2,8 +2,8 @@
  */
 
 class Context {
-  Space current;
-  bool done = false;
+  private Space current;
+  private bool done = false;
   
   public Context (Space node) {
     current = node;

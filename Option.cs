@@ -1,3 +1,8 @@
+/*
+ Options for player to choose from.
+ Create objects for each option and its effect on the City attributes.
+*/
+
 public class Option {
     private string name;
     private int economyChange;

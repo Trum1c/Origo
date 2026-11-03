@@ -14,9 +14,25 @@ public class City {
         this.economy += option.GetEconomyChange();
         this.satisfaction += option.GetSatisfactionChange();
         this.co2 += option.GetCo2Change();
-        
+
+        choices.Add(option);
     } 
     public string GetStatus (){
         return "\nØkonomi: "+economy+ "\nTilfredshed: " +satisfaction+ "\nCO2: " +co2+ "\n";
+    }
+
+    public string GetSummary(){
+        string summary = "";
+        int choiceNumber = 1;
+
+        foreach(Option option in choices){
+            summary += "\n"+choiceNumber+". "+option.GetName()+"\n";
+            summary += "Economy: "+option.GetEconomyChange()+"\n";
+            summary += "Satisfaction: "+option.GetSatisfactionChange() +"\n";
+            summary += "CO2: "+option.GetCo2Change()+"\n";
+
+            choiceNumber++;
+        }
+        return summary;
     }
 }

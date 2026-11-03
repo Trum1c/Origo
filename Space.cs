@@ -4,12 +4,31 @@ AND ALSO DISPLAYS LOCATION AND CURRENT EXITS.
  */
 
 class Space : Node {
+    private Decision? decision;
+    
   public Space (String name) : base(name)
   {
+  }
+
+  public void SetDecision(Decision decision){
+      this.decision = decision;
+  }
+
+  public Decision? GetDecision(){
+      return decision;
   }
   
   public void Welcome () {
     Console.WriteLine("Du er nu ved "+name);
+
+    if(decision != null){
+        if(decision.IsMade()){
+            Console.WriteLine("Beslutningen her er allerede truffet.");
+        } else{
+            Console.WriteLine(decision.Describe());
+        }
+    }
+    
     HashSet<string> exits = edges.Keys.ToHashSet();
     Console.WriteLine("Tilgængelige områder:");
     foreach (String exit in exits) {

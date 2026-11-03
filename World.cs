@@ -44,8 +44,36 @@ class World {
     coalPlantDecision.AddOption(repairCoalPlant);
     coalPlantDecision.AddOption(shutdownCoalPlant);
     coalPlant.SetDecision(coalPlantDecision);
+
+    // Havn: 1. Byg en stor vindmøllepark. 2. Byg en lille vindmøllepark.
+    Option bigWindFarm   = new Option("Byg en stor vindmøllepark", -20, 0, -20);
+    Option smallWindFarm = new Option("Byg en lille vindmøllepark", -5, 0, -5);
+
+    Decision portDecision = new Decision("Et firma vil bygge havvindmøller ud for kysten. Hvor stor skal vindmølleparken være?");
+    portDecision.AddOption(bigWindFarm);
+    portDecision.AddOption(smallWindFarm);
+    port.SetDecision(portDecision);
+
+    // Solcelleanlæg: 1. Byg solceller på markerne. 2. Byg solceller på husenes tage
+    Option solarSystemField = new Option("Byg et solcelleanlæg på markerne i landet", -5, -5, -10);
+    Option solarSystemHouses = new Option("Byg solcelleanlæg på husene", -15, 0, -10);
+
+    Decision solarDecision = new Decision("Byen skal helst få mere elektricitet. Hvad skal borgmesteren gøre?");
+    solarDecision.AddOption(solarSystemField);
+    solarDecision.AddOption(solarSystemHouses);
+    solarSystem.SetDecision(solarDecision);
+
+    // Torv: 1. Byg en cykelsti. 2. Byg et storcenter
+    Option SquareBikeLane = new Option("Byg en cykelsti i torvet", -5, 10, -10);
+    Option squareMall = new Option("Byg et storcenter i byen.", -15, 0, 5);
+
+    Decision squareDecision = new Decision("Nogle borgere vil kunne cycle noget mere rundt og andre vil have et storcenter. Hvad skal borgmesteren gøre?");
+    squareDecision.AddOption(SquareBikeLane);
+    squareDecision.AddOption(squareMall);
+    square.SetDecision(squareDecision); 
   }
-  
+
+    
   public Space GetEntry () {
     return cityHall;
   }

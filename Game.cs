@@ -6,8 +6,8 @@ MEANING, USER WRITES SOMETHING AND CODE RUNS OFF OF IT.
 
 class Game {
   static World    world    = new World();
-  static Context  context  = new Context(world.GetEntry());
   static City     city     = new City(50,50,50);
+  static Context  context  = new Context(world.GetEntry(), city);
   
   static void Main (string[] args) {
     Console.WriteLine("Velkommen til borgmesterens by!");

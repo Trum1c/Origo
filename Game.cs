@@ -30,6 +30,12 @@ class Game {
         case "farvel":
           context.MakeDone();
           break;
+        case "vælg":
+        if (parameters.Length!=1) {
+          Console.WriteLine("Vælg igen");
+          continue;
+        }
+        break;
         case "status":
           Console.WriteLine(city.GetStatus());
           break;

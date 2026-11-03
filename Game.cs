@@ -29,13 +29,20 @@ class Game {
         case "udgang":
         case "farvel":
           context.MakeDone();
-          break;
-        case "vælg":
-        if (parameters.Length!=1) {
-          Console.WriteLine("Vælg igen");
-          continue;
-        }
         break;
+        case "vælg":
+            if (parameters.Length != 1) {
+              Console.WriteLine("Skriv fx: vælg 1");
+              break;
+            }
+            if (int.TryParse(parameters[0], out int number) == false) {
+              Console.WriteLine("Skriv et tal efter vælg, fx: vælg 1");
+              break;
+            }
+            if (context.Choose(number)) {
+              Console.WriteLine(city.GetStatus());
+            }
+            break;
         case "status":
           Console.WriteLine(city.GetStatus());
           break;

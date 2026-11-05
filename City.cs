@@ -22,17 +22,22 @@ public class City {
     }
 
     public string GetSummary(){
-        string summary = "";
+        string summary = "\nDine Valg:\n";
         int choiceNumber = 1;
 
         foreach(Option option in choices){
             summary += "\n"+choiceNumber+". "+option.GetName()+"\n";
-            summary += "Economy: "+option.GetEconomyChange()+"\n";
-            summary += "Satisfaction: "+option.GetSatisfactionChange() +"\n";
+            summary += "Økonomi: "+option.GetEconomyChange()+"\n";
+            summary += "Tilfredshed: "+option.GetSatisfactionChange() +"\n";
             summary += "CO2: "+option.GetCo2Change()+"\n";
 
             choiceNumber++;
         }
         return summary;
+
+    
+    }
+    public int GetEconomy(){
+        return economy;
     }
 }

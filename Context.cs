@@ -4,11 +4,13 @@
 class Context {
     private Space current;
     private City city;              // NEW: line added
+    private World world;
     private bool done = false;
     
-    public Context (Space node, City city) {   // NEW: second parameter
+    public Context (Space node, City city, World world) {   // NEW: second parameter
     current = node;
     this.city = city;             // NEW: save it in the field
+    this.world = world;
     }
   
   public Space GetCurrent() {
@@ -44,6 +46,19 @@ class Context {
       }
   
       city.ApplyOption(option);
+
+      if (city.GetEconomy() < 0) {
+        Console.WriteLine("Din by har ingen penge tilbage!");
+        Console.WriteLine(city.GetSummary());
+        Console.WriteLine(city.GetStatus());
+        done = true;
+      } else if (world.AllDecisionsMade()) {
+        Console.WriteLine("Du har truffet alle beslutninger!");
+        Console.WriteLine(city.GetSummary());
+        Console.WriteLine(city.GetStatus());
+        done = true;
+      }
+      
       return true;
     }
   

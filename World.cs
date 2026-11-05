@@ -5,7 +5,8 @@ THE BLUEPRINT THAT COMES FROM NODE.CS
 
 class World {
   Space cityHall;
-  
+  private List<Decision> decisions = new List<Decision>();
+    
   public World () {
       Space cityHall = new Space("Rådhus",
           "Din sekretær møder dig i døren. \"Velkommen, borgmester! Byen vokser, og vi skal bruge mere strøm.\n" +
@@ -62,6 +63,7 @@ class World {
     coalPlantDecision.AddOption(repairCoalPlant);
     coalPlantDecision.AddOption(shutdownCoalPlant);
     coalPlant.SetDecision(coalPlantDecision);
+    decisions.Add(coalPlantDecision);
 
     // Havn: 1. Byg en stor vindmøllepark. 2. Byg en lille vindmøllepark.
     Option bigWindFarm   = new Option("Byg en stor vindmøllepark", -20, 0, -20);
@@ -71,7 +73,8 @@ class World {
     portDecision.AddOption(bigWindFarm);
     portDecision.AddOption(smallWindFarm);
     port.SetDecision(portDecision);
-
+    decisions.Add(portDecision);
+    
     // Solcelleanlæg: 1. Byg solceller på markerne. 2. Byg solceller på husenes tage
     Option solarSystemField = new Option("Byg et solcelleanlæg på markerne i landet", -5, -5, -10);
     Option solarSystemHouses = new Option("Byg solcelleanlæg på husene", -15, 0, -10);
@@ -80,6 +83,7 @@ class World {
     solarDecision.AddOption(solarSystemField);
     solarDecision.AddOption(solarSystemHouses);
     solarSystem.SetDecision(solarDecision);
+    decisions.Add(solarDecision);
 
     // Torv: 1. Byg en cykelsti. 2. Byg et storcenter
     Option SquareBikeLane = new Option("Byg en cykelsti i torvet", -5, 10, -10);
@@ -89,11 +93,21 @@ class World {
     squareDecision.AddOption(SquareBikeLane);
     squareDecision.AddOption(squareMall);
     square.SetDecision(squareDecision); 
+    decisions.Add(squareDecision);
   }
 
     
   public Space GetEntry () {
     return cityHall;
   }
+  
+  public bool AllDecisionsMade (){
+      foreach(Decision decision in decisions){
+          if (decision.IsMade()==false){
+              return false;
+          }
+      }
+      return true;
+  }  
 }
 

@@ -52,4 +52,5 @@ class Decision{
     public bool IsMade(){
         return chosen != null;
     }
+    
 }

@@ -55,6 +55,17 @@ class Game {
             continue;
           }
           context.Transition(parameters[0]);
+          break; 
+          case "tag":
+          Document? document = context.Take();
+          if(document != null){
+              Console.WriteLine("Du tog "+document.GetName());   
+          } else {
+              Console.WriteLine("Der findes ikke en dokument der kan tages."); 
+          }
+          break;
+          case"mappe":
+          Console.WriteLine(context.GetInventory());
           break;
         case "hjælp":
           Console.WriteLine(" - stop     Stop spillet");
@@ -64,6 +75,7 @@ class Game {
           Console.WriteLine(" - hjælp    Viser disse beskeder");
           Console.WriteLine(" - status   Viser byens status");
           Console.WriteLine(" - vælg     Vælg en mulighed, fx: vælg 1");
+          Console.WriteLine(" - tag      Læg dokumentet i din mappe");
           break;
         default:
           Console.WriteLine("Hovsa! Jeg forstår ikke '"+command+"' 😕");

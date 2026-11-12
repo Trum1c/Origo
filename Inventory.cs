@@ -4,7 +4,8 @@ class Inventory {
     public void AddDocument(Document document){
         this.documents.Add(document);
     }
-
+    
+    // remove if not used.
     public void RemoveDocument(Document document){
         this.documents.Remove(document);
     }
@@ -16,5 +17,19 @@ class Inventory {
             }
         }
         return null;
+    }
+
+    public override string ToString(){
+        string inventory = "";
+
+        if(documents.Count != 0){
+            foreach(Document document in documents){
+                inventory += document.GetName();
+                inventory += "\n"+document.GetContent()+"\n";
+            }
+        } else{
+            inventory += "tom mappe";
+        }
+        return inventory;
     }
 }

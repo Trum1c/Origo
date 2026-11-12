@@ -6,6 +6,7 @@ AND ALSO DISPLAYS LOCATION AND CURRENT EXITS.
 class Space : Node {
     private Decision? decision;
     private string description;
+    private Document? document;
     
     public Space (String name, String description) : base(name)
     {
@@ -19,9 +20,24 @@ class Space : Node {
   public Decision? GetDecision(){
       return decision;
   }
+
+  public void SetDocument(Document? document){
+      this.document = document;
+  }
+
+  public Document? GetDocument(){
+      return document;
+  }
   
   public void Welcome () {
     Console.WriteLine("Du er nu ved "+name);
+
+    if(GetDocument() != null){
+        Console.WriteLine("Der findes en dokument i denne lokation (psst skriv 'tag')");
+    } else {
+        Console.WriteLine("Der findes ingen dokumenter her....");
+    }
+
     Console.WriteLine(description);
     
     if(decision != null){

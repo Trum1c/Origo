@@ -94,6 +94,10 @@ class World {
     squareDecision.AddOption(squareMall);
     square.SetDecision(squareDecision); 
     decisions.Add(squareDecision);
+
+    // test "tag"
+    Document document = new Document("Test Document", "Content test");
+    port.SetDocument(document);
   }
 
     

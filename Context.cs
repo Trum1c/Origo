@@ -3,13 +3,14 @@
 
 class Context {
     private Space current;
-    private City city;              // NEW: line added
-    private World world;
+    private City city;
     private bool done = false;
+    private World world;
+    private Inventory inventory = new Inventory();
     
-    public Context (Space node, City city, World world) {   // NEW: second parameter
+    public Context (Space node, City city, World world) {
     current = node;
-    this.city = city;             // NEW: save it in the field
+    this.city = city;
     this.world = world;
     }
   
@@ -30,6 +31,7 @@ class Context {
       current = next;
       current.Welcome();
     }
+    
     public bool Choose (int number) {
       Decision? decision = current.GetDecision();
   
@@ -61,13 +63,28 @@ class Context {
       
       return true;
     }
-  
-  public void MakeDone () {
-    done = true;
-  }
-  
-  public bool IsDone () {
-    return done;
-  }
+
+    public Inventory GetInventory(){
+        return inventory;
+    }
+
+    public Document? Take(){
+        Document? document = current.GetDocument();
+        if(document != null){
+            inventory.AddDocument(document);
+            current.SetDocument(null);
+            return document;
+        }
+
+        return null;
+    }
+
+    public void MakeDone () {
+        done = true;
+    }
+
+    public bool IsDone () {
+        return done;
+    }
 }
 

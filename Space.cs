@@ -48,7 +48,11 @@ class Space : Node {
         }
     }
     
-    HashSet<string> exits = edges.Keys.ToHashSet();
+ PrintLocation();   
+
+  }
+public void PrintLocation(){
+      HashSet<string> exits = edges.Keys.ToHashSet();
     Console.WriteLine("Tilgængelige områder:");
     foreach (String exit in exits) {
       Console.WriteLine(" - "+exit);

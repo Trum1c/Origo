@@ -51,11 +51,19 @@ class Context {
 
       if (city.GetEconomy() < 0) {
         Console.WriteLine("Din by har ingen penge tilbage!");
+        if (city.HasChosen("Byg et storcenter i byen.")) {
+          Option futureSquareMall = new Option("Storcentret giver overskud, ift. parameterne.", 30, 10, 5);
+          city.ApplyOption(futureSquareMall);
+        }
         Console.WriteLine(city.GetSummary());
         Console.WriteLine(city.GetStatus());
         done = true;
       } else if (world.AllDecisionsMade()) {
         Console.WriteLine("Du har truffet alle beslutninger!");
+        if (city.HasChosen("Byg et storcenter i byen.")) {
+          Option futureSquareMall = new Option("Storcentret giver overskud, ift. parameterne.", 30, 10, 5);
+          city.ApplyOption(futureSquareMall);
+        }
         Console.WriteLine(city.GetSummary());
         Console.WriteLine(city.GetStatus());
         done = true;

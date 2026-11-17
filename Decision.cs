@@ -53,4 +53,7 @@ class Decision{
         return chosen != null;
     }
     
+    public Option? GetChosen(){
+        return chosen;
+    }
 }

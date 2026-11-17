@@ -40,4 +40,13 @@ public class City {
     public int GetEconomy(){
         return economy;
     }
+
+    public bool HasChosen(string name){
+    foreach(Option option in choices){
+        if(option.GetName() == name){
+            return true;
+        }
+    }
+    return false;
+}
 }

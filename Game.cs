@@ -66,6 +66,7 @@ class Game {
           break;
           case"mappe":
           Console.WriteLine(context.GetInventory());
+          context.GetCurrent().PrintLocation();
           break;
         case "hjælp":
           Console.WriteLine(" - stop     Stop spillet");

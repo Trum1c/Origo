@@ -95,9 +95,37 @@ class World {
     square.SetDecision(squareDecision); 
     decisions.Add(squareDecision);
 
-    // test "tag"
-    Document document = new Document("Test Document", "Content test");
-    port.SetDocument(document);
+    // Havnen
+    Document windmillDocument = new Document("\x1b[1mDokument:\x1b[0m \"Vindemølle\"", "En vindmølle laver strøm, når vinden drejer vingerne.\n" +
+        "Den udleder ikke CO2, når den laver strøm.\n" +
+        "Men vindmøller koster mange penge at bygge, og når det er vindstille, laver de ingen strøm.\n");
+    port.SetDocument(windmillDocument);
+
+    // Solcelleanlæg
+    Document solarDocument = new Document("\x1b[1mDokument:\x1b[0m \"Solcelleanlæg\"", "Solceller laver strøm, når de bliver udsat for sollys.\n" +
+        "De udleder ikke CO2, når de laver strøm.\n" +
+        "Men solceller koster mange penge at bygge, og de fungerer ikke på en mørk dag. \n");
+    solarSystem.SetDocument(solarDocument);
+    // Boligkvarter
+    Document coalDocument = new Document("\x1b[1mDokument:\x1b[0m \"Kulkraftværk\"", "Kulkraftværket brænder kul for at lave strøm.\n" +
+        "Det er billigt, men det udleder meget CO2, som gør Jorden varmere.\n" +
+        "Hvis kulkraftværket lukker, skal byen finde en anden måde at lave strøm på.\n");
+    coalPlant.SetDocument(coalDocument);
+    // Torv
+    Document squareDocument = new Document("\x1b[1mDokument:\x1b[0m \"Torv\"", "Torvet er byens centrum. Herfra kan man gå til alle byens steder.\n" +
+        "Der er mange biler, og det dytter og larmer.\n" +
+        "På en tavle står der: \"Vedvarende energi er energi, der ikke slipper op, fx vind og sol.\"\n");
+    square.SetDocument(squareDocument);
+    // Rådhus
+    Document residentialDocument = new Document("\x1b[1mDokument:\x1b[0m \"Elregningen\"", "Alle familier i byen betaler for den strøm, de bruger.\n" +
+        "Bliver strømmen dyrere, har familierne færre penge til andet.\n" +
+        "Derfor bliver borgerne utilfredse, hvis strømmen stiger meget i pris.\n");
+    residentialArea.SetDocument(residentialDocument);
+    // Havn
+    Document portDocument = new Document("\x1b[1mDokument:\x1b[0m \"Vindmøller\"", "En vindmølle laver strøm, når vinden drejer vingerne.\n" +
+        "Den udleder ikke CO2, når den laver strøm.\n" +
+        "Men vindmøller koster mange penge at bygge, og når det er vindstille, laver de ingen strøm.\n");
+    port.SetDocument(portDocument);
   }
 
     

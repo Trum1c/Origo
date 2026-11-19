@@ -12,26 +12,92 @@ class World {
           "Din sekretær møder dig i døren. \"Velkommen, borgmester! Byen vokser, og vi skal bruge mere strøm.\n" +
           "Du skal træffe beslutninger rundt i byen. Hold øje med tre ting: økonomi, tilfredshed og CO2.\n" +
           "CO2 er en gas, der kommer ud, når man brænder kul. Den gør Jorden varmere.\n" +
-          "Skriv hjælp, hvis du er i tvivl.\"");
+          "Skriv hjælp, hvis du er i tvivl.\"", @"
+                               |>>>
+                               |
+                              / \
+                             /___\
+                 ___________|  o  |___________
+                /           |_____|           \
+               /_______________________________\
+               |  [] [] []   ___   [] [] []    |
+               |             | |               |
+               |  [] [] []   |.|   [] [] []    |
+               |_____________|_|_______________|
+            ======================================");
       Space square = new Space("Torv",
           "Torvet ligger midt i byen. Herfra kan du gå til alle byens steder.\n" +
           "Der er mange biler, og det dytter og larmer.\n" +
-          "På en tavle står der: \"Vedvarende energi er energi, der ikke slipper op, fx vind og sol.\"");
+          "På en tavle står der: \"Vedvarende energi er energi, der ikke slipper op, fx vind og sol.\"", @"
+                  ________________________
+                 |  VEDVARENDE ENERGI ER  |
+                 |  ENERGI, DER IKKE      |
+                 |  SLIPPER OP: VIND, SOL |
+                 |________________________|
+                           |  |
+                  ______   |  |                 __o
+              ___/  ||  \__|  |               _ \<_
+             |_O________O__|  |              (_)/(_)
+            ==========================================");
       Space residentialArea = new Space("Boligkvarter",
           "To naboer står og snakker over hækken.\n" +
           "Den ene siger: \"Røgen fra kraftværket gør, at mine børn hoster. Kan vi ikke få ren luft?\"\n" +
-          "Den anden ryster på hovedet: \"Bare strømmen ikke bliver dyrere. Vi har ikke råd til mere.\"");
+          "Den anden ryster på hovedet: \"Bare strømmen ikke bliver dyrere. Vi har ikke råd til mere.\"", @"
+                  /\              /\              /\
+                 /  \            /  \            /  \
+                /____\          /____\          /____\
+                | [] |    o  o  | [] |          | [] |
+                |  _ |   /|  |\ |  _ |          |  _ |
+                |_|_||   / \/ \ |_|_||          |_|_||
+            ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
       Space coalPlant = new Space("Kraftværk",
           "Du står foran byens gamle kulkraftværk. Røgen fra skorstenen er grå og lugter.\n" +
-          "Kraftværket laver det meste af byens strøm. Kul er billigt, men når det brænder, kommer der meget CO2 ud.");
+          "Kraftværket laver det meste af byens strøm. Kul er billigt, men når det brænder, kommer der meget CO2 ud.", @"
+                    (  )   (   )
+                   (    ) (     )
+                     (  )   (  )
+                      ||     ||
+                      ||     ||
+                 _____||_____||______
+                |   KULKRAFTVÆRK     |____
+                |  []   []   []      |    |
+                |  []   []   []   _  | [] |
+                |_____________|_|_|__|____|
+            ===================================");
       Space port = new Space("Havn",
           "Måger skriger over havnen, og det blæser altid herude.\n" +
           "En mand fra et vindmøllefirma viser dig en tegning: \"Vindmøller laver strøm af vinden.\n" +
-          "De udleder ikke CO2, men de koster mange penge at bygge.\"");
+          "De udleder ikke CO2, men de koster mange penge at bygge.\"",@"
+                 _____      ____       ______     ___
+                |  _  |    | [] |     | [][] |   |   |___
+            ____|_| |_|____|____|_____|______|___|___|___|____
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+              ###############################################
+              ##     |\        |\        |\        |\      ##
+              ##     | \       | \       | \       | \     ##
+              ##   __|__\__  __|__\__  __|__\__  __|__\__  ##
+              ##   \______/  \______/  \______/  \______/  ##
+              ##                                           ##
+              ##    _____         _____         _____      ##
+              ##   /_____\_      /_____\_      /_____\_    ##
+              ##   \_______/     \_______/     \_______/   ##
+              ##                                           ##
+              ##########################     ###############
+            ~      ~~      ~      ~~    ~  ~     ~~     ~    ~
+               ~~     ~       ~~      ~      ~~     ~     ~~");
       Space solarSystem = new Space("Solcelleanlæg",
           "Du står på en stor, grøn mark uden for byen. Solen skinner.\n" +
           "Solceller laver strøm af sollys uden at udlede CO2.\n" +
-          "Nogle borgere går tur her hver dag, og de vil nødig miste marken.");
+          "Nogle borgere går tur her hver dag, og de vil nødig miste marken.", @"
+                        \   |   /
+                         .-'''-.
+                    --- (       ) ---
+                         '-...-'
+                        /   |   \
+                _________    _________    _________
+               /_/_/_/_/_/  /_/_/_/_/_/  /_/_/_/_/_/
+                   ||           ||           ||
+            ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,");
     
     // WE "HARDCODE" IT NOW, BUT HAVENT LEARNT HOW TO OPTIMIZE IT.
     // WE WILL INCLUDE IT IN OUR RAPPORT AND EVENTUALLY CHANGE IT

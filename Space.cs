@@ -7,10 +7,12 @@ class Space : Node {
     private Decision? decision;
     private string description;
     private Document? document;
+    private string art;
     
-    public Space (String name, String description) : base(name)
+    public Space (String name, String description, string art) : base(name)
     {
       this.description = description;
+      this.art = art;
     }
 
   public void SetDecision(Decision decision){
@@ -31,6 +33,7 @@ class Space : Node {
   
   public void Welcome () {
     Console.WriteLine("Du er nu ved "+name);
+    Console.WriteLine(art);
 
     if(GetDocument() != null){
         Console.WriteLine("Der findes en dokument i denne lokation (psst skriv 'tag')");

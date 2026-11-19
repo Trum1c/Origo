@@ -31,6 +31,7 @@ class Game {
           context.MakeDone();
         break;
         case "vælg":
+        Console.Clear();
             if (parameters.Length != 1) {
               Console.WriteLine("Skriv fx: vælg 1");
               break;
@@ -44,12 +45,13 @@ class Game {
                 Console.WriteLine(city.GetStatus());
               }
             }
-            
             break;
         case "status":
+        Console.Clear();
           Console.WriteLine(city.GetStatus());
           break;
         case "gå":
+        Console.Clear();
           if (parameters.Length!=1) {
             Console.WriteLine("Jeg ved ikke hvor det ligger for søren 🤔");
             continue;
@@ -57,6 +59,7 @@ class Game {
           context.Transition(parameters[0]);
           break; 
           case "tag":
+          Console.Clear();
           Document? document = context.Take();
           if(document != null){
               Console.WriteLine("Du tog "+document.GetName());   
@@ -65,20 +68,30 @@ class Game {
           }
           break;
           case"mappe":
+          Console.Clear();
           Console.WriteLine(context.GetInventory());
           context.GetCurrent().PrintLocation();
           break;
+          case "kig":
+          Console.Clear();
+          Console.WriteLine("Du er i "+context.GetCurrent().GetName());
+          context.GetCurrent().PrintLocation();
+          break;
         case "hjælp":
-          Console.WriteLine(" - stop     Stop spillet");
-          Console.WriteLine(" - udgang   Stop spillet");
-          Console.WriteLine(" - farvel   Stop spillet");
-          Console.WriteLine(" - gå       Gå til et område");
-          Console.WriteLine(" - hjælp    Viser disse beskeder");
-          Console.WriteLine(" - status   Viser byens status");
-          Console.WriteLine(" - vælg     Vælg en mulighed, fx: vælg 1");
-          Console.WriteLine(" - tag      Læg dokumentet i din mappe");
+        Console.Clear();
+          Console.WriteLine(" - stop     Stop spillet.");
+          Console.WriteLine(" - udgang   Stop spillet.");
+          Console.WriteLine(" - farvel   Stop spillet.");
+          Console.WriteLine(" - gå       Gå til et område.");
+          Console.WriteLine(" - hjælp    Viser disse beskeder.");
+          Console.WriteLine(" - status   Viser byens status.");
+          Console.WriteLine(" - vælg     Vælg en mulighed, fx: vælg 1.");
+          Console.WriteLine(" - tag      Læg dokumentet i din mappe.");
+          Console.WriteLine(" - mappe    Læs dokumenter der findes i din mappe.");
+          Console.WriteLine(" - kig      Kig rundt og se hvor du er.");
           break;
         default:
+        Console.Clear();
           Console.WriteLine("Hovsa! Jeg forstår ikke '"+command+"' 😕");
           break;
       }

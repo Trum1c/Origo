@@ -95,12 +95,7 @@ class World {
     square.SetDecision(squareDecision); 
     decisions.Add(squareDecision);
 
-    // Havnen
-    Document windmillDocument = new Document("\x1b[1mDokument:\x1b[0m \"Vindemølle\"", "En vindmølle laver strøm, når vinden drejer vingerne.\n" +
-        "Den udleder ikke CO2, når den laver strøm.\n" +
-        "Men vindmøller koster mange penge at bygge, og når det er vindstille, laver de ingen strøm.\n");
-    port.SetDocument(windmillDocument);
-
+    
     // Solcelleanlæg
     Document solarDocument = new Document("\x1b[1mDokument:\x1b[0m \"Solcelleanlæg\"", "Solceller laver strøm, når de bliver udsat for sollys.\n" +
         "De udleder ikke CO2, når de laver strøm.\n" +

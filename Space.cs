@@ -30,6 +30,10 @@ class Space : Node {
   public Document? GetDocument(){
       return document;
   }
+
+  public void SetArt(string art){
+      this.art = art;
+  }
   
   public void Welcome () {
     Console.WriteLine("Du er nu ved "+name);

@@ -49,7 +49,38 @@ class Context {
   
       city.ApplyOption(option);
 
-      if (city.GetEconomy() < 0) {
+      // check for coal plant
+      if(city.HasChosen("Sæt kulkraftværket i stand") && current.GetName() == "Kraftværk"){
+         current.SetArt(@"
+                   (  )   (   )
+                  (    ) (     )
+                    (  )   (  )
+                     ||     ||
+                     ||     ||
+                _____||_____||______
+               |   KULKRAFTVÆRK     |____
+               |  []   []   []      |    |
+               |  []   []   []   _  | [] |
+               |_____________|_|_|__|____|
+           ===================================");
+      }
+      if(city.HasChosen("Luk kulkraftværket") && current.GetName() == "Kraftværk"){
+          current.SetArt(@"
+                     ___________
+                    |  LUKKET   |
+                    |___________|
+                      ||     ||
+                      ||     ||
+                 _____||_____||______
+                |   KULKRAFTVÆRK     |____
+                |  []   []   []      |    |
+                |  []   []   []   _  | [] |
+                |_____________|_|_|__|____|
+            ===================================");
+      }
+
+      // check for game ends conditions
+      if (city.GetEconomy() <= 0) {
         Console.WriteLine("Din by har ingen penge tilbage!");
         Console.WriteLine(city.GetSummary());
         Console.WriteLine(city.GetStatus());

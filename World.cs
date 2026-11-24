@@ -53,9 +53,9 @@ class World {
       Space coalPlant = new Space("Kraftværk",
           "Du står foran byens gamle kulkraftværk. Røgen fra skorstenen er grå og lugter.\n" +
           "Kraftværket laver det meste af byens strøm. Kul er billigt, men når det brænder, kommer der meget CO2 ud.", @"
-                    (  )   (   )
-                   (    ) (     )
-                     (  )   (  )
+                     ___________
+                    |  ??????   |
+                    |___________|
                       ||     ||
                       ||     ||
                  _____||_____||______
@@ -122,7 +122,7 @@ class World {
 
     //  1. Sæt kulkraftværket i stand. 2. Luk kulkraftværket.
     Option repairCoalPlant = new Option("Sæt kulkraftværket i stand", 15, -10, 20);
-    Option shutdownCoalPlant = new Option("Luk kulkraftværket", -15, 10, -20); // change
+    Option shutdownCoalPlant = new Option("Luk kulkraftværket", -15, 10, -20);
 
     Decision coalPlantDecision = new Decision("Det gamle kulkraftværk er slidt, men byen har brug for strøm. Hvad skal borgmesteren gøre?"); 
     coalPlantDecision.AddOption(repairCoalPlant);

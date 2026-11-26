@@ -42,6 +42,7 @@ class Game {
             }
             if (context.Choose(number)) {
               if (context.IsDone() == false) {
+                context.GetCurrent().Welcome(); 
                 Console.WriteLine(city.GetStatus());
               }
             }

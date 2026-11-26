@@ -24,7 +24,7 @@ class Context {
       try{
           next = current.FollowEdge(direction);
       } catch (KeyNotFoundException) {
-          Console.WriteLine("Du er forvirret og går rundt i en cirkel hvor du leder for '"+direction+"'. Til sidst giver du op 😩");
+          Console.WriteLine("Du er forvirret og går rundt i en cirkel hvor du leder for '"+direction+"'. Til sidst giver du op 😩. \nPrøv at skrive hjælp\n");
           return;
       }
       current.Goodbye();
